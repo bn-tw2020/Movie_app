@@ -62,28 +62,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_thumb_up" />
+                    <Button
+                        android:id="@+id/btn_like"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/thumbs_up_selector" />
                     <TextView
+                        android:id="@+id/likeCountView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="15dp"
                         android:textSize="18sp"
                         android:layout_marginLeft="5dp"
-                        android:text="15"
+                        android:text=""
                         android:textColor="#ffffff"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        app:srcCompat="@drawable/ic_thumb_down" />
+                    <Button
+                        android:id="@+id/btn_dislike"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/thumbs_down_selector" />
                     <TextView
+                        android:id="@+id/dislikeCountView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:textSize="18sp"
                         android:layout_marginLeft="5dp"
-                        android:text="1"
+                        android:text=""
                         android:textColor="#ffffff"/>
             </LinearLayout>
         </LinearLayout>
@@ -217,34 +223,93 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="한줄평"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_write"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/write"
+                        android:drawableLeft="@drawable/ic_review_selected"
+                        android:layout_marginLeft="250dp"
+                        android:padding="4dp"
+                        android:text="작성하기"
+                        android:textColor="#ff7f00"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+                <Button
+                    android:id="@+id/btn_showALL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/show_all"
+                    android:textColor="#ff55ff"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="모두 보기" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="#ffffff">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_height="wrap_content"
-                    android:text="한줄평"
-                    android:layout_centerVertical="true"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                android:background="#ffffff"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_review_selected"
-                    android:layout_alignParentRight="true"
+                    android:id="@+id/btn_facebook"
+                    android:layout_width="65dp"
+                    android:layout_height="56dp"
                     android:layout_marginRight="10dp"
-                    android:background="#ffffff"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:text="작성하기"
-                    android:padding="4dp"
-                    android:textSize="15dp"
-                    android:textColor="#ff7f00"
-                    android:textStyle="bold"/>
-            </RelativeLayout>
+                    android:background="@drawable/ic_facebook" />
+
+                <Button
+                    android:id="@+id/btn_kakao"
+                    android:layout_width="65dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/ic_kakao" />
+
+                <Button
+                    android:id="@+id/btn_buy"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:textColor="#ffffff"
+                    android:background="#ff7700"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="예매하기"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
